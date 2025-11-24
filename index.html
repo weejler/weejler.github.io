@@ -46,10 +46,12 @@
         /* Style for the header section with the subtle background pattern */
         .header-bg-section {
             background-color: #1A1A1A; /* Base dark color */
-            background-image: var(--tw-bg-image);
-            background-size: cover;
-            background-repeat: repeat;
-            background-position: center; /* Added for better placement */
+            /* FIX 1: Use direct URL to ensure image path is found */
+            background-image: url('./assets/images/Pattern.png'); 
+            /* FIX 2: Set size and repeat for a visible pattern */
+            background-size: 100px;
+            background-repeat: repeat; 
+            background-position: center; 
             /* Subtly darken the image and make it translucent */
             position: relative;
             z-index: 10;
@@ -123,7 +125,7 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                 <div class="md:col-span-2 text-center md:text-left">
                     <h2 class="text-4xl font-bold mb-4 text-accent-blue">Who I Am</h2>
                     <p class="text-lg text-text-light leading-relaxed">
-                        Hello! I'm Alice Waller, an Electrical Engineer specializing in low-power embedded systems and renewable energy integration. With a passion for creating efficient, reliable hardware, I thrive on taking complex concepts from schematic design through to a final, tested PCB. My experience ranges from developing smart grid monitors for industrial applications to optimizing battery charge controllers for portable electronics. I am dedicated to sustainable innovation and pushing the boundaries of what reliable electronics can achieve.
+                        Hello! I'm Eli Taylor, a Mechatronics and Biomedical Engineer specializing in machine learning algorithms and implantable brain-computer interface microchips threough HADILAB at McMaster University. With a passion for creating efficient, innovative hardware, I thrive on taking complex concepts from schematic design through to a final, tested circuit. My experience ranges from developing new hardware for optimized template matching in BCIs to desigining and fixing dedicated electrical systems for large industrial machines through Husky Technologies. I am dedicated to sustainable innovation and pushing the boundaries of what people can achieve.
                     </p>
                     <div class="mt-6">
                         <a href="#" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-xl">
@@ -246,7 +248,7 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
 
     <footer class="bg-secondary-dark mt-12 py-8 border-t border-accent-blue/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
-            <p>&copy; 2024 Alice Waller. Electrical Engineering Portfolio.</p>
+            <p>&copy; 2025 Eli Taylor. Engineering Portfolio.</p>
             <div class="mt-2 space-x-4">
                 <a href="#" class="hover:text-accent-blue transition">LinkedIn</a>
                 <a href="#" class="hover:text-accent-blue transition">GitHub</a>
