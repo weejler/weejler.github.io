@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leelor | Project: Music Player</title>
-    <link rel="icon" type="image/png" href="../../assets/imgs/logo.png">
+    <title>Leelor | Project: Courier Robot</title>
+    <link rel="icon" type="image/png" href="../../assets/imgs/funnylogo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -34,7 +34,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-text-muted text-lg mb-2">Featured Personal Project</p>
             <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                Low-Power Wireless Music Player
+                Hospital Courier Robot: Autonomous Line-Follower
             </h1>
         </div>
     </header>
@@ -50,45 +50,38 @@
     </nav>
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-
+        
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-4 text-accent-blue">Project Goal: Audio Fidelity & Efficiency</h2>
+            <h2 class="text-3xl font-bold mb-4 text-accent-blue">Project Overview & Goal</h2>
             <p class="text-lg text-text-light leading-relaxed mb-8">
-                This project was an exercise in **optimizing embedded systems for media streaming**, focusing on achieving high audio fidelity while maintaining ultra-low power consumption. It served as a practical application of my knowledge in complex circuit design, microcontroller programming, and digital signal processing. The prototype was built entirely on a breadboard, requiring meticulous wiring and component selection.
+                The objective of the <strong>Hospital Courier Robot</strong> project was to design and prototype an autonomous system for transporting small medical supplies between hospital wings, thereby increasing staff efficiency and reducing delivery times. This mechatronic solution combines <strong>custom mechanical design, embedded control, and computer vision</strong> into a single, functional prototype that navigates using floor lines.
             </p>
 
             <div class="bg-secondary-dark p-6 rounded-xl shadow-xl mb-8">
-                <img src="../../assets/imgs/personal-breadboard.jpg"
-                     alt="A close-up image of a complex breadboard circuit for an audio player."
+                <img src="../../assets/imgs/track.jpg"
+                     alt="3D printed chassis design for the hospital courier robot."
                      class="rounded-lg mb-4 w-full object-cover max-h-96">
-                <p class="text-text-muted text-center text-sm italic">Image: Breadboard prototype of the low-power music player.</p>
+                <p class="text-text-muted text-center text-sm italic">Image: The Line Following Robot Navigating a Sample Track.</p>
             </div>
 
-            <h2 class="text-3xl font-bold mb-4 text-accent-blue">Technical Implementation</h2>
+            <h2 class="text-3xl font-bold mb-4 text-accent-blue">Technical Implementation & Components</h2>
             <p class="text-lg text-text-light leading-relaxed mb-8">
-                The device was powered by a custom microcontroller program written in **C/C++**, managing state machines for power-saving, decoding streaming audio data, and outputting to a dedicated Digital-to-Analog Converter (DAC). Key technical highlights included:
+                The system was built around several key hardware and software components, demonstrating competence in integrating diverse technologies:
             </p>
             <ul class="list-disc list-inside text-lg text-text-light leading-relaxed ml-4 space-y-2">
-                <li>**Custom Firmware:** Designed all software from scratch, optimizing for minimal clock cycles and efficient memory usage.</li>
-                <li>**Low-Power State Management:** Implemented deep sleep and wake-on-event mechanisms to significantly extend battery life.</li>
-                <li>**Wireless Interface:** Integrated a low-power Bluetooth module for streaming, focusing on maintaining a stable connection with minimal overhead.</li>
+                <li><strong>Embedded Control (Raspberry Pi):</strong> The core control unit was an <strong>Raspberry Pi</strong> microcontroller, responsible for translating the navigation decisions into precise motor control signals (PWM) to maintain line-following accuracy.</li>
+                <li><strong>Computer Vision (Webcam):</strong> A lightweight </trong>webcam</strong> was mounted to capture the floor path. The video stream was processed on a separate unit (e.g., Raspberry Pi or laptop) using <strong>Python/OpenCV</strong> to identify the line's position and orientation, feeding error data back to the Pi.</li>
+                <li><strong>Mechanical Design (3D Printed Chassis):<strong> The robot's body was a custom, optimized <strong>3D-printed chassis</strong>strong> designed in SolidWorks. The design prioritized component mounting, battery management, and a low center of gravity for stable movement within the hospital environment.</li>
             </ul>
 
             <div class="bg-secondary-dark p-6 rounded-xl shadow-xl mt-8">
-                <img src="../../assets/imgs/personal-code.jpg"
-                     alt="A screenshot of C++ code showing embedded system functions."
+                <img src="../../assets/imgs/code.png"
+                     alt="Close-up of the Arduino microcontroller and webcam integration."
                      class="rounded-lg mb-4 w-full object-cover max-h-96">
-                <p class="text-text-muted text-center text-sm italic">Image: Snippet of custom microcontroller C++ code.</p>
+                <p class="text-text-muted text-center text-sm italic">Image: Sample of the Code Used in The Project</p>
             </div>
         </section>
 
     </main>
 
     <footer class="bg-secondary-dark mt-12 py-8 border-t border-accent-blue/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
-            <p>&copy; 2025 Elias Everett Taylor. Engineering Portfolio.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
