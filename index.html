@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Leelor | Engineer</title>
-    <!-- CUSTOM WEBSITE ICON (FAVICON) -->
-    <!-- Assuming your icon file is named 'logo.png' and is located at './assets/images/logo.png' -->
     <link rel="icon" type="image/png" href="./assets/images/logo.png">
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -78,11 +74,9 @@
 </head>
 <body class="bg-primary-dark text-text-light font-sans antialiased">
 
-    <!-- Header Section with Pattern Background -->
     <header class="header-bg-section bg-header-pattern py-16 md:py-24 shadow-2xl shadow-black">
         <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-            <!-- ASCII Art Logo -->
             <pre class="ascii-header text-accent-blue text-xs sm:text-sm md:text-base mb-6 mx-auto">
 <span class="text-white">_____ _____ _____ _____ _____</span>
                 
@@ -97,18 +91,15 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
         _\///////////////__\///////////////__\///////////____________\///////////////________\///________
                 
             </pre>
-            <!-- Main Title -->
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-3 tracking-tight">
                 ELIAS TAYLOR
             </h1>
-            <!-- Tagline -->
             <p class="text-xl md:text-2xl text-text-muted font-light">
                 Building a Brighter World
             </p>
         </div>
     </header>
 
-    <!-- Navigation Bar -->
     <nav class="sticky top-0 bg-secondary-dark/95 backdrop-blur-sm z-30 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center h-16 space-x-8">
@@ -120,19 +111,15 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
         </div>
     </nav>
 
-    <!-- Main Content Sections -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
 
-        <!-- About Section -->
         <section id="about" class="mb-20">
             <div class="grid md:grid-cols-3 gap-10 items-center bg-secondary-dark p-8 rounded-xl shadow-xl">
-                <!-- Image Placeholder (Replace with your own professional photo) -->
                 <div class="md:col-span-1 flex justify-center">
                     <img src="https://placehold.co/400x400/1e293b/a5b4fc?text=Professional+Photo"
                          alt="Alice Waller Professional Portrait"
                          class="rounded-full w-48 h-48 object-cover border-4 border-accent-blue shadow-lg">
                 </div>
-                <!-- Bio Text -->
                 <div class="md:col-span-2 text-center md:text-left">
                     <h2 class="text-4xl font-bold mb-4 text-accent-blue">Who I Am</h2>
                     <p class="text-lg text-text-light leading-relaxed">
@@ -147,12 +134,10 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-20">
             <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Featured Projects</h2>
             <div class="grid md:grid-cols-3 gap-8">
 
-                <!-- Project Card 1: Smart Grid Monitor -->
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
                     <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=PCB+Render"
                          alt="Smart Grid Monitor"
@@ -162,7 +147,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <a href="/projects/smart-grid-monitor" data-project="Smart Grid Monitor" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Case Study &rarr;</a>
                 </div>
 
-                <!-- Project Card 2: Robotics Arm Controller -->
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
                     <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=Schematic"
                          alt="Robotics Arm Controller"
@@ -172,7 +156,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <a href="/projects/servo-controller" data-project="High-Precision Servo Controller" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Project &rarr;</a>
                 </div>
 
-                <!-- Project Card 3: Solar Charge Optimizer -->
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
                     <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=Solar+Panel"
                          alt="Solar Charge Optimizer"
@@ -184,12 +167,10 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-20">
             <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Core Skills & Tools</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
 
-                <!-- Skill 1: PCB Design -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 0012 21.011a12.001 12.001 0 008.618-18.067z" />
@@ -197,7 +178,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <p class="text-sm font-medium">PCB Design (Altium, KiCad)</p>
                 </div>
 
-                <!-- Skill 2: Embedded C/C++ -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -205,7 +185,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <p class="text-sm font-medium">Embedded C/C++</p>
                 </div>
 
-                <!-- Skill 3: Microcontrollers -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -213,7 +192,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <p class="text-sm font-medium">STM32, ESP32, PIC</p>
                 </div>
 
-                <!-- Skill 4: Simulation -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M18 10h-6a2 2 0 00-2 2v5a2 2 0 002 2h6a2 2 0 002-2v-5a2 2 0 00-2-2z" />
@@ -221,7 +199,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <p class="text-sm font-medium">MATLAB/Simulink</p>
                 </div>
 
-                <!-- Skill 5: Power Electronics -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -229,7 +206,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     <p class="text-sm font-medium">Power & Analog Design</p>
                 </div>
 
-                <!-- Skill 6: Testing -->
                 <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v2m0 0a3 3 0 003 3h3" />
@@ -240,11 +216,10 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Get In Touch</h2>
             <div class="max-w-xl mx-auto bg-secondary-dark p-8 rounded-xl shadow-2xl">
-                <form action="#" method="POST" class="space-y-6">
+                <form action="#" method="POST" class="space-y-6" onsubmit="return false;">
                     <div>
                         <label for="name" class="block text-sm font-medium text-text-light mb-1">Name</label>
                         <input type="text" id="name" name="name" required
@@ -269,7 +244,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-secondary-dark mt-12 py-8 border-t border-accent-blue/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
             <p>&copy; 2024 Alice Waller. Electrical Engineering Portfolio.</p>
@@ -281,7 +255,6 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
         </div>
     </footer>
 
-    <!-- JavaScript for simulated navigation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const projectLinks = document.querySelectorAll('.project-link');
@@ -321,6 +294,3 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
     </script>
 </body>
 </html>
-
-
-
