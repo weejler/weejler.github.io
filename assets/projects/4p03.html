@@ -3,45 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovations in Healthcare Technology (4P03) | Project Details</title>
-    </head>
+    <title>Leelor | Project: 4P03</title>
+    <link rel="icon" type="image/png" href="../../assets/imgs/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1A1A1A',
+                        'secondary-dark': '#242424',
+                        'accent-blue': '#3B82F6',
+                        'text-light': '#F3F4F6',
+                        'text-muted': '#9CA3AF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+</head>
 <body class="bg-primary-dark text-text-light font-sans antialiased">
 
-    <header class="header-bg-section py-12 md:py-16 shadow-2xl shadow-black">
-        <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+    <header class="bg-secondary-dark py-12 md:py-16 border-b-4 border-accent-blue/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-text-muted text-lg mb-2">Featured Project</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                 Innovations in Healthcare Technology (4P03)
             </h1>
-            <p class="text-xl md:text-2xl text-accent-blue font-light">
-                Detailed Case Study: Low-Power Industrial Monitoring
-            </p>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <nav class="bg-primary-dark shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-12">
+                <a href="../../index.html#projects" class="inline-flex items-center text-sm font-medium text-text-light hover:text-accent-blue transition duration-200 ease-in-out">
+                    &larr; Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
 
-        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl space-y-8">
-            <img src="../assets/images/smart_grid_monitor_pcb.jpg"
-                 alt="PCB render of the Smart Grid Monitor"
-                 class="w-full h-auto rounded-lg shadow-lg border border-accent-blue/50">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
 
-            <h2 class="text-3xl font-bold text-accent-blue">Project Overview</h2>
-            <p class="text-text-light leading-relaxed">
-                This project involved designing a compact, highly reliable device for real-time monitoring of current and voltage in commercial power distribution panels. The primary challenge was achieving high data acquisition accuracy (0.1% margin of error) while maintaining exceptionally low power consumption for long-term deployment.
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-accent-blue">The Challenge</h2>
+            <p class="text-lg text-text-light leading-relaxed mb-8">
+                The **Rehabilitation Center for Children in Winnipeg** faced a dual problem: long waiting times leading to patient discomfort, anxiety, and clinic staff overwhelm. Our capstone project focused on redesigning the waiting room experience not just aesthetically, but through the implementation of a novel, economically viable, and socially beneficial technological solution. The goal was to provide a calming, engaging, and informative waiting environment.
             </p>
-            
-            <h3 class="text-2xl font-semibold text-text-light">Technical Implementation</h3>
-            <ul class="list-disc list-inside text-text-muted space-y-2 pl-4">
-                <li>**Microcontroller:** Utilized the STM32L4 series for its advanced low-power modes and robust peripheral set.</li>
-                <li>**Design Focus:** 4-layer PCB design to minimize noise and optimize power planes.</li>
-                <li>**Data Transmission:** Implemented a LoRaWAN module for long-range, low-bandwidth data transmission to a central server.</li>
-                <li>**Key Achievement:** Reduced average power draw to 10µA during sleep, enabling years of operation on a single battery pack.</li>
+
+            <div class="bg-secondary-dark p-6 rounded-xl shadow-xl mb-8">
+                <img src="../../assets/imgs/4p03-concept.jpg"
+                     alt="Conceptual rendering of the redesigned waiting room solution."
+                     class="rounded-lg mb-4 w-full object-cover max-h-96">
+                <p class="text-text-muted text-center text-sm italic">Image: Conceptual rendering of the redesigned waiting room solution.</p>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-4 text-accent-blue">The Solution and Impact</h2>
+            <p class="text-lg text-text-light leading-relaxed mb-8">
+                We developed a modular, interactive system centered around **gamified distraction and information delivery**. This solution utilized low-cost embedded systems and a user-friendly interface to provide calming interactive projections and educational content relevant to the center's services. Key aspects included:
+            </p>
+            <ul class="list-disc list-inside text-lg text-text-light leading-relaxed ml-4 space-y-2">
+                <li>**Cost-Effective Design:** Focused on using readily available, maintainable components to ensure long-term sustainability and economic viability.</li>
+                <li>**Patient Engagement:** Interactive elements were designed to reduce perceived waiting time and alleviate stress, especially for children.</li>
+                <li>**Social Benefit:** The system provided direct, measurable improvements in patient well-being and reduced the burden on clinic staff.</li>
             </ul>
 
-            <a href="https://github.com/elias/smart-grid-monitor" target="_blank" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md">
-                View Repository on GitHub
-            </a>
-        </div>
+            <div class="bg-secondary-dark p-6 rounded-xl shadow-xl mt-8">
+                <img src="../../assets/imgs/4p03-prototype.jpg"
+                     alt="Prototype of the interactive system's control panel and embedded hardware."
+                     class="rounded-lg mb-4 w-full object-cover max-h-96">
+                <p class="text-text-muted text-center text-sm italic">Image: Prototype of the interactive system's control panel and embedded hardware.</p>
+            </div>
+        </section>
+
     </main>
-    </body>
+
+    <footer class="bg-secondary-dark mt-12 py-8 border-t border-accent-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
+            <p>&copy; 2025 Elias Everett Taylor. Engineering Portfolio.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
