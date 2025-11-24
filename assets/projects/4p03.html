@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovations in Healthcare Technology (4P03) | Project Details</title>
+    </head>
+<body class="bg-primary-dark text-text-light font-sans antialiased">
 
+    <header class="header-bg-section py-12 md:py-16 shadow-2xl shadow-black">
+        <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+                Innovations in Healthcare Technology (4P03)
+            </h1>
+            <p class="text-xl md:text-2xl text-accent-blue font-light">
+                Detailed Case Study: Low-Power Industrial Monitoring
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl space-y-8">
+            <img src="../assets/images/smart_grid_monitor_pcb.jpg"
+                 alt="PCB render of the Smart Grid Monitor"
+                 class="w-full h-auto rounded-lg shadow-lg border border-accent-blue/50">
+
+            <h2 class="text-3xl font-bold text-accent-blue">Project Overview</h2>
+            <p class="text-text-light leading-relaxed">
+                This project involved designing a compact, highly reliable device for real-time monitoring of current and voltage in commercial power distribution panels. The primary challenge was achieving high data acquisition accuracy (0.1% margin of error) while maintaining exceptionally low power consumption for long-term deployment.
+            </p>
+            
+            <h3 class="text-2xl font-semibold text-text-light">Technical Implementation</h3>
+            <ul class="list-disc list-inside text-text-muted space-y-2 pl-4">
+                <li>**Microcontroller:** Utilized the STM32L4 series for its advanced low-power modes and robust peripheral set.</li>
+                <li>**Design Focus:** 4-layer PCB design to minimize noise and optimize power planes.</li>
+                <li>**Data Transmission:** Implemented a LoRaWAN module for long-range, low-bandwidth data transmission to a central server.</li>
+                <li>**Key Achievement:** Reduced average power draw to 10µA during sleep, enabling years of operation on a single battery pack.</li>
+            </ul>
+
+            <a href="https://github.com/elias/smart-grid-monitor" target="_blank" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md">
+                View Repository on GitHub
+            </a>
+        </div>
+    </main>
+    </body>
+</html>
