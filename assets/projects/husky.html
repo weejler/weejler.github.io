@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Design and Support (Husky) | Project Details</title>
+    </head>
+<body class="bg-primary-dark text-text-light font-sans antialiased">
 
+    <header class="header-bg-section py-12 md:py-16 shadow-2xl shadow-black">
+        <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+                Machine Design and Support (Husky)
+            </h1>
+            <p class="text-xl md:text-2xl text-accent-blue font-light">
+                Robotics Motor Driver and Feedback Loop Design
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl space-y-8">
+            <img src="../assets/images/servo_controller_schematic.jpg"
+                 alt="Schematic for the High-Precision Servo Controller"
+                 class="w-full h-auto rounded-lg shadow-lg border border-accent-blue/50">
+
+            <h2 class="text-3xl font-bold text-accent-blue">Project Goals and Design</h2>
+            <p class="text-text-light leading-relaxed">
+                The objective was to design a motor control board capable of driving five high-torque servos with extreme accuracy for a custom-built industrial robotic arm. This required precise current sensing, robust heat dissipation, and a fast, reliable feedback mechanism.
+            </p>
+            
+            <h3 class="text-2xl font-semibold text-text-light">Control System Details</h3>
+            <ul class="list-disc list-inside text-text-muted space-y-2 pl-4">
+                <li>**Control Method:** Developed a custom Proportional-Integral-Derivative (PID) control algorithm in C++.</li>
+                <li>**Driver Circuitry:** Implemented advanced H-bridge driver circuitry optimized for minimal switching loss and thermal efficiency.</li>
+                <li>**Safety Features:** Integrated thermal monitoring and overcurrent protection at the hardware level.</li>
+                <li>**Results:** Bench testing showed a 15% improvement in overshoot and steady-state error compared to off-the-shelf controllers.</li>
+            </ul>
+
+            <a href="https://github.com/elias/servo-controller" target="_blank" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md">
+                View Schematic and Code
+            </a>
+        </div>
+    </main>
+    </body>
+</html>
