@@ -1,1 +1,47 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Music Player (Personal) | Project Details</title>
+    </head>
+<body class="bg-primary-dark text-text-light font-sans antialiased">
 
+    <header class="header-bg-section py-12 md:py-16 shadow-2xl shadow-black">
+        <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+                Wireless Music Player (Personal)
+            </h1>
+            <p class="text-xl md:text-2xl text-accent-blue font-light">
+                Maximum Power Point Tracking Algorithm Implementation
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <div class="bg-secondary-dark p-8 rounded-xl shadow-xl space-y-8">
+            <img src="../assets/images/mppt_controller_solar_panel.jpg"
+                 alt="MPPT Charge Controller connected to a solar panel"
+                 class="w-full h-auto rounded-lg shadow-lg border border-accent-blue/50">
+
+            <h2 class="text-3xl font-bold text-accent-blue">The MPPT Challenge</h2>
+            <p class="text-text-light leading-relaxed">
+                Maximum Power Point Tracking (MPPT) is crucial for efficient solar power systems. This project focused on developing a highly efficient and fast Perturb and Observe (P&O) algorithm implementation to dynamically adjust the system impedance and maximize power harvest under changing environmental conditions.
+            </p>
+            
+            <h3 class="text-2xl font-semibold text-text-light">Software & Efficiency</h3>
+            <ul class="list-disc list-inside text-text-muted space-y-2 pl-4">
+                <li>**Algorithm:** Custom P&O implementation optimized for high-frequency switching.</li>
+                <li>**Hardware:** Utilized a high-speed DSP (Digital Signal Processor) to handle the complex calculations required for tracking.</li>
+                <li>**Power Conversion:** Designed a buck converter stage with low-Rds(on) MOSFETs and optimized dead-time control.</li>
+                <li>**Efficiency Gain:** Achieved a verified system-level efficiency of 97.5%, exceeding the performance of many commercial PWM controllers by over 20%.</li>
+            </ul>
+
+            <a href="https://github.com/elias/mppt-charge-controller" target="_blank" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md">
+                Access Source Code Now
+            </a>
+        </div>
+    </main>
+    </body>
+</html>
