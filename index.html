@@ -1,726 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Waller | Electrical Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1A1A1A', // Very dark gray/black for the main body
+                        'secondary-dark': '#242424', // Slightly lighter dark gray for cards
+                        'accent-blue': '#3B82F6', // A bright blue for highlights/accents
+                        'text-light': '#F3F4F6', // Light gray for primary text
+                        'text-muted': '#9CA3AF', // Muted gray for secondary text
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        // Using a placeholder URL for the user's pattern image
+                        'header-pattern': "url('uploaded:Pattern.png-62a21bea-a1e3-4137-a6d3-315e3297f329')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-  <title>Eli Online</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <style> hr.new1 {border:7px solid #0062BA;} </style>
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        /* Custom style for the ASCII header to ensure monospaced font and spacing */
+        .ascii-header {
+            font-family: monospace;
+            line-height: 0.8;
+            letter-spacing: -2px;
+            white-space: pre; /* Essential to respect the ASCII layout */
+            overflow-x: auto; /* Allow horizontal scroll if the ASCII is very wide */
+            -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+        /* Style for the header section with the subtle background pattern */
+        .header-bg-section {
+            background-color: #1A1A1A; /* Base dark color */
+            background-image: var(--tw-bg-image);
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center; /* Added for better placement */
+            /* Subtly darken the image and make it translucent */
+            position: relative;
+            z-index: 10;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        .header-bg-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Reduced opacity for a more visible pattern */
+            z-index: 1;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Butterfly - v4.7.0
-  * Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
+<body class="bg-primary-dark text-text-light font-sans antialiased">
 
-<body>
+    <!-- Header Section with Pattern Background -->
+    <header class="header-bg-section bg-header-pattern py-16 md:py-24 shadow-2xl shadow-black">
+        <div class="header-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+            <!-- ASCII Art Logo -->
+            <pre class="ascii-header text-accent-blue text-xs sm:text-sm md:text-base mb-6 mx-auto">
+<span class="text-white">_____ _____ _____ _____ _____</span>
+/\ \ /\ \ /\ \ /\ \ /\ \
+/::\ \ /::\____\ /::\ \ /::\ \ /::\ \
+/::::\ \ /:::/ / \:::\ \ /::::\ \ \:::\ \
+/::::::\ \ /:::/ / \:::\ \ /::::::\ \ \:::\ \
+/:::/\:::\ \ /:::/ / \:::\ \ /:::/\:::\ \ \:::\ \
+/:::/__\:::\ \ /:::/ / \:::\ \ /:::/__\:::\ \ \:::\ \
+/::::\ \:::\ \ /:::/ / /::::\ \ /::::\ \:::\ \ /::::\ \
+/::::::\ \:::\ \ /:::/ / ____ /::::::\ \ /::::::\ \:::\ \ /::::::\ \
+/:::/\:::\ \:::\ \ /:::/ / /\ \ /:::/\:::\ \ /:::/\:::\ \:::\ \ /:::/\:::\ \
+/:::/__\:::\ \:::\____\/:::/____/ /::\ \/:::/ \:::\____\ /:::/__\:::\ \:::\____\ /:::/ \:::\____\
+\:::\ \:::\ \::/ /\:::\ \ \:::\ /:::/ \::/ / \:::\ \:::\ \::/ / /:::/ \::/ /
+\:::\ \:::\ \/____/ \:::\ \ \:::\/:::/ / \/____/ \:::\ \:::\ \/____/ /:::/ / \/____/
+\:::\ \:::\ \ \:::\ \ \::::::/ / \:::\ \:::\ \ /:::/ /
+\:::\ \:::\____\ \:::\ \ \::::/____/ \:::\ \:::\____\ /:::/ /
+\:::\ \::/ / \:::\ \ \:::\ \ \:::\ \::/ / \::/ /
+\:::\ \/____/ \:::\ \ \:::\ \ \:::\ \/____/ \/____/
+\:::\ \ \:::\ \ \:::\ \ \:::\ \
+\:::\____\ \:::\____\ \:::\____\ \:::\____\
+\::/ / \::/ / \::/ / \::/ /
+\/____/ \/____/ \/____/ \/____/
+            </pre>
 
-      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-      <!-- Uncomment below if you prefer to use text as a logo -->
-      <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#DP1">DP1</a></li>
-          <li><a class="nav-link scrollto" href="#DP2">DP2</a></li>
-          <li><a class="nav-link scrollto " href="#DP3">DP3</a></li>
-          <li><a class="nav-link scrollto" href="#DP4">DP4</a></li>
-          <li><a class="nav-link scrollto" href="#ADD">Additional Projects</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>  About Me - Elias E Taylor</h1>
-          <h2>Kitchener resident and proud member of McMaster University's IBioMed Program</h2>
-          <p1>
-            I enjoy going for runs and working on coding/robotics projects in my free time (like this website). When not doing that I'm sure to be watching Youtube, playing games, or chatting with friends</p1>
-          <h3>Fluent In:</h2>
-          <p2>Javascript, HTML, C++, Python, AutoDesk Inventor, Davinci Resolve</p2>
-          <div><a href="#DP1" class="btn-get-started scrollto">My Work</a></div>
+            <!-- Main Title -->
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-3 tracking-tight">
+                ALICE WALLER
+            </h1>
+            <!-- Tagline -->
+            <p class="text-xl md:text-2xl text-text-muted font-light">
+                Innovating the Future of Electronics
+            </p>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="">
-        </div>
-      </div>
-    </div>
+    </header>
 
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="DP1" class="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 d-flex justify-content-center dp1-img">
-            <img src="assets/img/dp1-img.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h1>Design Project One</h1>
-            <h3>GI Joe</h3>
-            <p> This design project involved modifying an ostomy bag to fufill our client's needs. My group decided to create the Ostonite, a functioning drainage attatchment to ensure our client would able to sleep through the night.</p>
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Overview in Brief</a></h4>
-              <p class="description">We used Autodesk Inventor to create a locking mechanism that was hotglued to an existing ostomy bag with a vacuum bag to help pull waste through the system.</p>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 bg-secondary-dark/95 backdrop-blur-sm z-30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center h-16 space-x-8">
+                <a href="#about" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-text-light hover:text-accent-blue border-b-2 border-transparent hover:border-accent-blue transition duration-200 ease-in-out">About</a>
+                <a href="#projects" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-text-light hover:text-accent-blue border-b-2 border-transparent hover:border-accent-blue transition duration-200 ease-in-out">Projects</a>
+                <a href="#skills" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-text-light hover:text-accent-blue border-b-2 border-transparent hover:border-accent-blue transition duration-200 ease-in-out">Skills</a>
+                <a href="#contact" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-text-light hover:text-accent-blue border-b-2 border-transparent hover:border-accent-blue transition duration-200 ease-in-out">Contact</a>
             </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Learning in Brief </a></h4>
-              <p class="description">I practised hard skills (cutting, hot-gluing, 3d printing) as well as my presentation skills.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Reflection in Brief</a></h4>
-              <p class="description">This was a large change from the structure of highschool right out of the gate, I'm glad I could work in this manner after a long year spent online.</p>
-            </div>
-
-          </div>
         </div>
-      </div>
-      <div align="center">
-        <p>https://www.amazon.ca/8531-Colostomy-Drainable-UltraclEar-Hollister/dp/B00F4JMLCC</p>
-      </div>
-    </section><!-- End About Section -->
-    
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
+    </nav>
 
-        <div class="section-title">
-          <div align="left">
+    <!-- Main Content Sections -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
 
-            <h2>Work Done - My Contributions</h2>  
-            <p>Please click the link icon on images below for more insights as to my contributions</p>
-          </div>
-        </div>
-        
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Iterations</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Iterations"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+        <!-- About Section -->
+        <section id="about" class="mb-20">
+            <div class="grid md:grid-cols-3 gap-10 items-center bg-secondary-dark p-8 rounded-xl shadow-xl">
+                <!-- Image Placeholder (Replace with your own professional photo) -->
+                <div class="md:col-span-1 flex justify-center">
+                    <img src="https://placehold.co/400x400/1e293b/a5b4fc?text=Professional+Photo"
+                         alt="Alice Waller Professional Portrait"
+                         class="rounded-full w-48 h-48 object-cover border-4 border-accent-blue shadow-lg">
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Final Design</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Final Deliverables"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details2.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Bio Text -->
+                <div class="md:col-span-2 text-center md:text-left">
+                    <h2 class="text-4xl font-bold mb-4 text-accent-blue">Who I Am</h2>
+                    <p class="text-lg text-text-light leading-relaxed">
+                        Hello! I'm Alice Waller, an Electrical Engineer specializing in low-power embedded systems and renewable energy integration. With a passion for creating efficient, reliable hardware, I thrive on taking complex concepts from schematic design through to a final, tested PCB. My experience ranges from developing smart grid monitors for industrial applications to optimizing battery charge controllers for portable electronics. I am dedicated to sustainable innovation and pushing the boundaries of what reliable electronics can achieve.
+                    </p>
+                    <div class="mt-6">
+                        <a href="#" class="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-xl">
+                            Download Resume
+                        </a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </section>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Report</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Report"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details3.html" title="More Details"><i class="bx bx-link"></i></a>
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20">
+            <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Featured Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Smart Grid Monitor -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
+                    <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=PCB+Render"
+                         alt="Smart Grid Monitor"
+                         class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-accent-blue">Smart Grid Monitor (STM32)</h3>
+                    <p class="text-text-muted text-sm">Developed a real-time current and voltage monitoring system for commercial power grids, achieving 99.9% data accuracy and ultra-low power consumption.</p>
+                    <a href="/projects/smart-grid-monitor" data-project="Smart Grid Monitor" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Case Study &rarr;</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-    
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
 
-        <div class="section-title">
-          <div align="left">
-            <h2>Lessons Learned - Reflection </h2>
-            <p>This design project was my first in person experience in over a year and it was initially difficult to readapt. Fortunately it provided a great chance to hone my group work after such an extended isolated period and through weekly milestones I learned how to cooperate as a teammember again. My 3MT also provided a great opporunity to work on my presentation skills which I took advantage of. I also developed my construction skills practising with many machines and tools such as the 3d printers and hot glue guns. My biggest shortcoming of the project was the start where I became far to busy far to quickly and ended up missing a submission. This taught me a valuable lesson in time managment and I have not made a simialr mistake since.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you approach the project how you did?</a></h4>
-              <p class="description">Frequent group meetings and throwing myself into the assignment was a direct response to my initial lack of confidence following the pandemic.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What's a stand out moment?</a></h4>
-              <p class="description">For me the most exciting experience of the whole project was watching the 3d printer work. I've always considered them so high-tech that I wouldn't even understand how to use them. Who would've thought I'd use them in the first project!</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you choose this solution?</a></h4>
-              <p class="description">It's difficult to pin down exactly when the drainage idea became our main path forwards. I often find the solution to a design problem either jumps out at you like this project or, more commonly, requires many iterations and failures defore you see any form of success.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color:#154AEE;"></i></div>
-              <h4 class="title"><a href="">What is your biggest takeaway?</a></h4>
-              <p class="description">I used to be someone who preferred to work by myself but this project taught me the value of teammates as I would have been completely unable to produce even a low-fidelity prototype by myself while balancing other course work.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you had no impact on the outcome?</a></h4>
-              <p class="description">If I hadn't been an active member of the group or been given any authority to make decisions the project would liekly look very different. Including a belt to help conceal the device and creating a vacuum sealed waste container were both ideas of mine heavily featured in the final design.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you could redo it?</a></h4>
-              <p class="description">While I certainly put all my effort into the project the first time around I believe there is still room for improvement. Many of the good ideas that we had only appeared towards the end of the project and were left underexplored or never made as a result. Given the chance I would be sure to implement these features earlier on.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-   <hr class="new1">   
-   <!-- ======= About Section ======= -->
-    <section id="DP2" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 d-flex justify-content-center dp1-img">
-            <img src="assets/img/dp2-img.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h1>Design Project Two</h1>
-            <h3>Hips Don't Lie</h3>
-            <p>In this project we were tasked with creating a hip implant designed to help a client suffering from a specific disease. We created Hip-Hip-Hooray by considering proper materials selection as well as including cutting edge features such as dual motion.</p>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Overview in Brief</a></h4>
-              <p class="description">We created Autodesk models and 3D printed components for a hypothetical hip implant. There was an accompanying Python file that calculates product life span and other important engineering-related information.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Learning in Brief </a></h4>
-              <p class="description">Practised a combination of python coding and important teamwork soft skills relating to collaboration.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Reflection in Brief</a></h4>
-              <p class="description">While the work I created was high quality it didn't seem to be of high value, fortunately I was forced into a position where I ended up learning about teamwork.</p>
-            </div>
-
-          </div>
-        </div>
-        
-      </div>
-     <div align="center">
-      <p>https://www.drugwatch.com/hip-replacement/complications/</p>
-     </div>
-    </section><!-- End About Section -->
-    
-        <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <div align="left">
-            <h2>Work Done - My Contributions</h2>  
-            <p>Please click the link icon on images below for more insights as to my contributions</p>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Iterations</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Iterations"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details4.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Project Card 2: Robotics Arm Controller -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
+                    <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=Schematic"
+                         alt="Robotics Arm Controller"
+                         class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-accent-blue">High-Precision Servo Controller</h3>
+                    <p class="text-text-muted text-sm">Designed the motor driver and feedback loop circuitry for a 5-axis robotic arm, increasing positional accuracy by 15% using custom PID control.</p>
+                    <a href="/projects/servo-controller" data-project="High-Precision Servo Controller" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Project &rarr;</a>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Final Design</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Final Deliverables"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details5.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Project Card 3: Solar Charge Optimizer -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
+                    <img src="https://placehold.co/600x400/0F172A/1D4ED8?text=Solar+Panel"
+                         alt="Solar Charge Optimizer"
+                         class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
+                    <h3 class="text-xl font-semibold mb-2 text-accent-blue">MPPT Charge Controller</h3>
+                    <p class="text-text-muted text-sm">A custom Maximum Power Point Tracking (MPPT) solution that boosted solar charging efficiency in off-grid systems by over 20% compared to standard PWM.</p>
+                    <a href="/projects/mppt-controller" data-project="MPPT Charge Controller" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Source Code &rarr;</a>
                 </div>
-              </div>
             </div>
-          </div>
+        </section>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Report</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Report"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details6.html" title="More Details"><i class="bx bx-link"></i></a>
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20">
+            <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Core Skills & Tools</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+
+                <!-- Skill 1: PCB Design -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 0012 21.011a12.001 12.001 0 008.618-18.067z" />
+                    </svg>
+                    <p class="text-sm font-medium">PCB Design (Altium, KiCad)</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-    
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
 
-        <div class="section-title">
-          <div align="left">
-            <h2>Lessons Learned - Reflection </h2>
-            <p>While I certainly had my work cut out for me on the coding aspect of this project much of my most valuable learning experiences were more related to teamwork. I have long struggled to give up control within group projects but being relegated to the coding team forced me to simply have faith in what the modelling team could produce. Their success became my success and helped me confront my inability to give up control. On my own side of the project I overcame our biggest failure, a lack of clarity in instructions, by being proactive and reaching out to TAs to seek clarification. This helped prepare me for similar situations which occur often in real engineering work projects I hope to be part of in the future.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you approach the project how you did?</a></h4>
-              <p class="description">Since my assigned position for this project was a coder I approached it from the perspective of all my past coding exercises since they had been successful. Using my existing coding basis was very useful as it let me finish my work quickly while still helping my teammates.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What's a stand out moment?</a></h4>
-              <p class="description">The stand out moment for me would have to be the final presentation since it felt incredibly validating. It was a celebration of the culmination of our efforts over a month long period that happened on the very last day of the fall term, right before a break.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you choose this solution?</a></h4>
-              <p class="description">As a coder I wasn't responsible for the creation of the physical solution. What I did contribute to were more general things such as material selection which left me in the dark as to how our final solution would look. Luckily it turned out very well and helped me increase my trust level, a very important attribute of group work.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color:#154AEE;"></i></div>
-              <h4 class="title"><a href="">What is your biggest takeaway?</a></h4>
-              <p class="description">My biggest takeaway is that every group member brings important qualities to the team. As a person who always prefers to lead, learning how to give up control is a valuable lesson which I learned in DP2 by relying completely upon the modelling team to do their job with no input of mine whatsoever.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you had no impact on the outcome?</a></h4>
-              <p class="description">The coding program we made turned out to have very little correlation with the actual final deliverables. It felt rather demoralizing for my main project to be so unimportant but I worked past it and still helped by including my opinions by voting on general decisions.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you could redo it?</a></h4>
-              <p class="description">If there was the option to work on the modelling team instead I likely would choose it. Not only would it have forced me to develop my Autodesk Inventor skills (which were lacking at that point) but I would have produced work I could be more genuinely proud of, which is important to me.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-    <hr class="new1">
-    <!-- ======= About Section ======= -->
-    <section id="DP3" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 d-flex justify-content-center dp1-img">
-            <img src="assets/img/dp3-img.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h1>Design Project Three</h1>
-            <h3>Sense of Independence</h3>
-            <p>In this project we were instructed to create a device to help automate healthcare-related tasks within the houshold. To this end we created SmartGate which is designed to detect when infants attempt to climb over it and alert parents accordingly.</p>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Overview in Brief</a></h4>
-              <p class="description">A kit consisting of a Raspberry Pi connected to force sensitive sensors through a T-Cobbler within a 3D printed case designed to be installed on top of an existing baby gate.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Learning in Brief </a></h4>
-              <p class="description">I developed a variety of hard skills namely Autodesk Inventor, Davinci Resolve, and 3D printing.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Reflection in Brief</a></h4>
-              <p class="description">In this project I chose to act as the leader for my subteam. I believe I helped to give direction to the project and was crucial in overcoming certain design-related setbacks.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-     <div align="center">
-       <p>https://www.safety1st.com/easy-install-walk-through-gate-ga105-s1-us-en.html</p>
-     </div>
-    </section><!-- End About Section -->
-    
-        <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <div align="left">
-            <h2>Work Done - My Contributions</h2>  
-            <p>Please click the link icon on images below for more insights as to my contributions</p>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Iterations</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Iterations"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details7.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Skill 2: Embedded C/C++ -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    <p class="text-sm font-medium">Embedded C/C++</p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Final Design</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Final Deliverables"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details8.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Skill 3: Microcontrollers -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <p class="text-sm font-medium">STM32, ESP32, PIC</p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Report</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Report"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details9.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Skill 4: Simulation -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M18 10h-6a2 2 0 00-2 2v5a2 2 0 002 2h6a2 2 0 002-2v-5a2 2 0 00-2-2z" />
+                    </svg>
+                    <p class="text-sm font-medium">MATLAB/Simulink</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-    
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
 
-        <div class="section-title">
-          <div align="left">
-            <h2>Lessons Learned - Reflection </h2>
-            <p>This design project help me truly understand Autodesk Inventor and provided a great space to practice my hard skills. I modeled several complex, moving parts which taught me about unique features such as "shell" as well as motion constraints. I then learned about Autodesk's film making capabilities and created animations out of these models which were incorporated into a larger video I made in Davinci Resolve detailing the whole design process. These skills helped me overcome a failure where our 3D printed components did not fit properly. In response, I learned how to think on my feet, when to act, and how to avoid the trap of single solution thinking.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you approach the project how you did?</a></h4>
-              <p class="description">For this project I decided to reclaim my role as the leader albiet only extending to the modelling subteam. Since I wanted to improve at Autodesk I ended up doing the vast majority of the work and even created modeled designs for both our short term and long-term solutions. I am very pleased with the quality of work I put forth.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What's a stand out moment?</a></h4>
-              <p class="description">This was undeniably the moment when we realised the case my partner 3D printed would not fit our Raspberry Pi. It was simultanouesly stressful and exicitng with a big portion of our marks up in the air. I thought quickly on my feet and managed to create a solution even better than what we had originally.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you choose this solution?</a></h4>
-              <p class="description">As mentioned before, the solution we were able to make was based entirely on necessity and creating something that would work. The original idea for automating a baby gate was spawned out of a desire to make something unique and challenging which I believe we succeeded in doing.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color:#154AEE;"></i></div>
-              <h4 class="title"><a href="">What is your biggest takeaway?</a></h4>
-              <p class="description">My biggest takeaway from this project is the importance of developing your personal skills as I believe I am at least partially responsible for catching several errors made by the rest of my group. While group work is important for completing everything to a high degree of quality that doesn't mean it's acceptable to just slack off when every person can make an impact.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you had no impact on the outcome?</a></h4>
-              <p class="description">This design project is perhaps the one I had the biggest individual impact on. While the overall design was something the group agreed on, unique design features such as a bellcrank for button activation and the idea to have adjustable heights were personal contributions I made that radically changed the course of the project.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you could redo it?</a></h4>
-              <p class="description">One of the biggest problems that we faced was bloating the project. With a 90+ page design report taken up mostly by engineering drawings there is certainly a lot of room to cut down and free up time. If I could redo it knowing what I know now the overall solution might stay the same but I believe we could have spent this free time on creating a more visually striking design.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-    <hr class="new1">
-    <!-- ======= About Section ======= -->
-    <section id="DP4" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 d-flex justify-content-center dp1-img">
-            <img src="assets/img/dp4-img.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h1>Design Project Four</h1>
-            <h3>Not a Pun, It's Real Life</h3>
-            <p>In this design project my team was reponsible for creating a device to help Nadina, a member of the community suffering from multiple sclerosis. We created the Topogra-fit which is a glove that helps her pick up and manipulate many houshold items.</p>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Overview in Brief</a></h4>
-              <p class="description"> We developed a fabric glove with a replacable friction-fit channel designed to hold primarily make-up products.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Learning in Brief </a></h4>
-              <p class="description">I practiced writing a great deal of the documentation and developed my skills as a proper team contributor.</p>
-            </div>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Reflection in Brief</a></h4>
-              <p class="description">Relying fully on my teammates to produce the physical design turned out to be a stressful yet rewarding experience providing me with much needed trust in future team endeavors.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-     <div align="center">
-       <p>https://www.epilepsy.com/learn/epilepsy-due-specific-causes/structural-causes-epilepsy/specific-structural-epilepsies/seizures-and-multiple-sclerosis</p>
-     </div>
-    </section><!-- End About Section -->
-    
-        <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <div align="left">
-            <h2>Work Done - My Contributions</h2>  
-            <p>Please click the link icon on images below for more insights as to my contributions</p>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-10.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Iterations</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-10.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Iterations"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details10.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Skill 5: Power Electronics -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <p class="text-sm font-medium">Power & Analog Design</p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-11.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Final Design</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-11.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Final Deliverables"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details11.html" title="More Details"><i class="bx bx-link"></i></a>
+                <!-- Skill 6: Testing -->
+                <div class="bg-secondary-dark p-4 rounded-xl text-center shadow-md hover:bg-secondary-dark/70 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v2m0 0a3 3 0 003 3h3" />
+                    </svg>
+                    <p class="text-sm font-medium">Hardware Testing & Debugging</p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-12.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design Report</h4>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Design Report"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details12.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
             </div>
-          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="text-4xl font-bold mb-10 text-center text-text-light border-b-2 border-accent-blue/50 pb-2">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-secondary-dark p-8 rounded-xl shadow-2xl">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-text-light mb-1">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full bg-primary-dark border border-text-muted/30 text-text-light rounded-lg py-2 px-4 focus:ring-accent-blue focus:border-accent-blue transition">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-text-light mb-1">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full bg-primary-dark border border-text-muted/30 text-text-light rounded-lg py-2 px-4 focus:ring-accent-blue focus:border-accent-blue transition">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-text-light mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full bg-primary-dark border border-text-muted/30 text-text-light rounded-lg py-2 px-4 focus:ring-accent-blue focus:border-accent-blue transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accent-blue hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-dark mt-12 py-8 border-t border-accent-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
+            <p>&copy; 2024 Alice Waller. Electrical Engineering Portfolio.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-accent-blue transition">LinkedIn</a>
+                <a href="#" class="hover:text-accent-blue transition">GitHub</a>
+                <a href="mailto:alice@example.com" class="hover:text-accent-blue transition">Email</a>
+            </div>
         </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-    
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
+    </footer>
 
-        <div class="section-title">
-          <div align="left">
-            <h2>Lessons Learned - Reflection </h2>
-            <p>While I didn't get the chance to flex my hard skills due to a lack of background expertise in sewing, I developed many important soft skills. As the leader of the more managerial side of the project I developed my communication skills, facilitating mutliple meetings and assuring that both attendees and those who couldn't make it were aware of our standing and their roles moving forward. I also furthered my creative thinking abilities by helping come up with the original idea and initial prototype that would serve as the basis for our future design iterations. I was also able to overcome a large obstacle and personal failure of mine in this project. I've long disagreed with the concept of meetings soley for the sake of updates and not progress but gradually grew to appreciate them for keeping me in the loop as to how the physical design was progressing.</p>
-          </div>
-        </div>
+    <!-- JavaScript for simulated navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectLinks = document.querySelectorAll('.project-link');
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you approach the project how you did?</a></h4>
-              <p class="description">The manner in which I approached this project is something I wish I could change. Since it relied so heavily on having background skills in sewing I was forced into an more administrative, supportive role. While this was difficult at the time, I acknowledge that it helped me develop skills important for success in the future.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What's a stand out moment?</a></h4>
-              <p class="description">The stand out moment for me was seeing our very first prototype. Seeing our idea come to life, work as we had designed, and appear as an incredibly high fidelity craft for just a concept was very validating and helped me find my passion for this project.</p>
-            </div>
-          </div>
+            projectLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const projectTitle = this.getAttribute('data-project');
+                    const targetUrl = this.getAttribute('href');
 
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">Why did you choose this solution?</a></h4>
-              <p class="description">While we intially started with a much larger pool of potential designs than any other project thus far, we rapidly narrowed down to the glove idea due to feasibility. Having a background in sewing and being able to modify an existing glove were key factors in our decision.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color:#154AEE;"></i></div>
-              <h4 class="title"><a href="">What is your biggest takeaway?</a></h4>
-              <p class="description">My biggest takeway from this project is the value that each person brings to a team. If this design project had gone another path then I would've never discovered my teammates' talent for sewing which is responsible for the sucess of this project. I think that if you're leading a group it's important to let people define themselves and if you're a member who has an idea it's important to advocate for it.</p>
-            </div>
-          </div>
+                    // 1. Log simulation details to the console
+                    console.log(`--- Navigation Simulation ---`);
+                    console.log(`Attempting to navigate to project detail page: ${targetUrl}`);
+                    console.log(`Project: ${projectTitle}`);
+                    console.log(`(In a live environment, this would load a new dedicated project page.)`);
+                    console.log(`-----------------------------`);
 
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you had no impact on the outcome?</a></h4>
-              <p class="description">While not much would have changed with the final design, much of the scheduling and writing tasks would be different. I carried that burden to allow my other teammates to succeed and I believe that without my help the challenge would change from "will this work?" to "Can we finish this in time?"</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-wow-delay="0.2s">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-question-circle" style="color: #154AEE;"></i></div>
-              <h4 class="title"><a href="">What if you could redo it?</a></h4>
-              <p class="description">Given the chance to redo the project I might have taken my own advice and advocated more for the inclusion of my own skills. While I cannot sew I'm very useful on both Autodesk Inventor and Python and I feel as if I could have produced a mechanical/computer component to give our design a little more oomph.</p>
-            </div>
-          </div>
-        </div>
+                    // 2. Display temporary on-screen notification (instead of alert)
+                    const existingMessage = document.getElementById('nav-message');
+                    if (existingMessage) existingMessage.remove();
 
-      </div>
-    </section><!-- End Services Section -->
-    
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                    const messageBox = document.createElement('div');
+                    messageBox.id = 'nav-message';
+                    messageBox.className = 'fixed bottom-5 right-5 bg-accent-blue text-white p-4 rounded-xl shadow-2xl transition-opacity duration-300 z-50 transform translate-x-0 opacity-100';
+                    messageBox.textContent = `[DEMO] Simulating navigation to: "${projectTitle}" (Check console for details)`;
+                    document.body.appendChild(messageBox);
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+                    // Auto-remove the message after 4 seconds
+                    setTimeout(() => {
+                        messageBox.classList.add('opacity-0', 'translate-x-10');
+                        setTimeout(() => messageBox.remove(), 500);
+                    }, 4000);
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
