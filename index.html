@@ -21,9 +21,8 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     backgroundImage: {
-                        // UPDATED: Using a standard relative path for GitHub Pages hosting.
-                        // Assumes Pattern.png is located at ./assets/images/Pattern.png
-                        'header-pattern': "url('assets/images/Pattern.png')", 
+                        // FIX: Ensuring consistent pathing with leading ./
+                        'header-pattern': "url('./assets/images/Pattern.png')", 
                     }
                 }
             }
@@ -46,9 +45,9 @@
         /* Style for the header section with the subtle background pattern */
         .header-bg-section {
             background-color: #1A1A1A; /* Base dark color */
-            /* FIX 1: Use direct URL to ensure image path is found */
-            background-image: url('assets/images/Pattern.png'); 
-            /* FIX 2: Set size and repeat for a visible pattern */
+            /* FIX: Ensuring consistent pathing with leading ./ */
+            background-image: url('./assets/images/Pattern.png'); 
+            /* FIX: Set size and repeat for a visible pattern */
             background-size: 100px;
             background-repeat: repeat; 
             background-position: center; 
@@ -141,30 +140,30 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
             <div class="grid md:grid-cols-3 gap-8">
 
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
-                    <img src="assets/images/smart_grid_monitor_pcb.jpg"
+                    <img src="./assets/images/smart_grid_monitor_pcb.jpg"
                          alt="Smart Grid Monitor"
                          class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
                     <h3 class="text-xl font-semibold mb-2 text-accent-blue">Innovations in Healthcare Technology (4P03)</h3>
                     <p class="text-text-muted text-sm">Developed an ultra-low power monitoring system for a critical care application, achieving 99.9% data accuracy and optimizing battery life for portable medical devices.</p>
-                    <a href="assets/projects/4p03.html" data-project="Innovations in Healthcare Technology (4P03)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Case Study &rarr;</a>
+                    <a href="./assets/projects/4p03.html" data-project="Innovations in Healthcare Technology (4P03)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Case Study &rarr;</a>
                 </div>
 
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
-                    <img src="assets/images/servo_controller_schematic.jpg"
+                    <img src="./assets/images/servo_controller_schematic.jpg"
                          alt="Robotics Arm Controller"
                          class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
                     <h3 class="text-xl font-semibold mb-2 text-accent-blue">Machine Design and Support (Husky)</h3>
                     <p class="text-text-muted text-sm">Designed motor control and communication circuitry for a high-payload industrial robotics platform, increasing positional accuracy and reliability through custom PID tuning.</p>
-                    <a href="assets/projects/husky.html" data-project="Machine Design and Support (Husky)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Project &rarr;</a>
+                    <a href="./assets/projects/husky.html" data-project="Machine Design and Support (Husky)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Project &rarr;</a>
                 </div>
 
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300 group">
-                    <img src="assets/images/mppt_controller_solar_panel.jpg"
+                    <img src="./assets/images/mppt_controller_solar_panel.jpg"
                          alt="Solar Charge Optimizer"
                          class="rounded-lg mb-4 h-40 w-full object-cover group-hover:opacity-80 transition duration-300">
                     <h3 class="text-xl font-semibold mb-2 text-accent-blue">Wireless Music Player (Personal)</h3>
                     <p class="text-text-muted text-sm">A personal project focusing on audio fidelity and battery management, utilizing a custom power tracking solution to boost efficiency by over 20% compared to standard designs.</p>
-                    <a href="assets/projects/personal.html" data-project="Wireless Music Player (Personal)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Source Code &rarr;</a>
+                    <a href="./assets/projects/personal.html" data-project="Wireless Music Player (Personal)" class="project-link text-accent-blue hover:text-blue-400 mt-3 inline-block text-sm font-medium">View Source Code &rarr;</a>
                 </div>
             </div>
         </section>
@@ -266,36 +265,3 @@ __/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\____________/\\\\\\\\\\\\\\\__
                     e.preventDefault();
                     
                     const projectTitle = this.getAttribute('data-project');
-                    const targetUrl = this.getAttribute('href');
-
-                    // 1. Log simulation details to the console
-                    console.log(`--- Navigation Simulation ---`);
-                    console.log(`Attempting to navigate to project detail page: ${targetUrl}`);
-                    console.log(`Project: ${projectTitle}`);
-                    console.log(`(In a live environment, this would load a new dedicated project page.)`);
-                    console.log(`-----------------------------`);
-
-                    // 2. Display temporary on-screen notification (instead of alert)
-                    const existingMessage = document.getElementById('nav-message');
-                    if (existingMessage) existingMessage.remove();
-
-                    const messageBox = document.createElement('div');
-                    messageBox.id = 'nav-message';
-                    messageBox.className = 'fixed bottom-5 right-5 bg-accent-blue text-white p-4 rounded-xl shadow-2xl transition-opacity duration-300 z-50 transform translate-x-0 opacity-100';
-                    messageBox.textContent = `[DEMO] Simulating navigation to: "${projectTitle}" (Check console for details)`;
-                    document.body.appendChild(messageBox);
-
-                    // Auto-remove the message after 4 seconds
-                    setTimeout(() => {
-                        messageBox.classList.add('opacity-0', 'translate-x-10');
-                        setTimeout(() => messageBox.remove(), 500);
-                    }, 4000);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
-
-
-
